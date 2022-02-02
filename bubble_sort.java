@@ -1,10 +1,9 @@
-import java.util.Scanner;
-
-class BubbleSort
+import java.util.*; // importing all the classes of the util package
+public class BubbleSort // class name declaration
 {
-	void bubble_sort(int arr[])
+	int bubble_sort(int arr[]) // this is the method which takes an array input and sorts the array using bubble sorting technique using ascending order
 	{
-		int n = arr.length;
+		int n = arr.length; // this is to find the length of the array
 		for (int i = 0; i < n-1; i++)
 			for (int j = 0; j < n-i-1; j++)
 				if (arr[j] > arr[j+1])
@@ -14,6 +13,7 @@ class BubbleSort
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;
 				}
+                return arr;
 	}
 
 	/* Prints the array */
@@ -36,9 +36,8 @@ class BubbleSort
         for (int i = 0; i < num; i++){
             arr[i] = sc.nextInt();
         }
-		ob.bubble_sort(arr);
 		System.out.println("Sorted array");
-		ob.printArray(arr);
+		ob.printArray(ob.bubble_sort(arr));
         sc.close();
 	}
 }
